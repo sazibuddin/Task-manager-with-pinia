@@ -16,9 +16,6 @@ const newTask = ref('');
       newTask.value = '';
     }
   }
-
-
-
 </script>
 
 <template>

@@ -3,8 +3,8 @@
   import { useTaskStore } from "@/stores/TaskStore";
 
   const taskStore = useTaskStore();
-
   const props = defineProps(['task']);
+
 </script>
 
 <template>

@@ -4,10 +4,7 @@ import taskDetails from "@/components/taskDetails.vue";
 import {ref} from "vue";
 import TaskForm from "@/components/TaskForm.vue";
 const taskStore  = useTaskStore();
-// { tasks, completedTask, completedCount, totalCount }
-
 const filter = ref('all');
-
 </script>
 
 <template>
@@ -18,7 +15,7 @@ const filter = ref('all');
   </header>
 
   <main>
-<!--    Create task-->
+    <!-- Create task-->
     <div class="new-task-form">
       <TaskForm />
     </div>
@@ -41,5 +38,4 @@ const filter = ref('all');
       </div>
     </div>
   </main>
-
 </template>
