@@ -3,7 +3,8 @@ import { useTaskStore } from './stores/TaskStore.js'
 import taskDetails from "@/components/taskDetails.vue";
 import {ref} from "vue";
 import TaskForm from "@/components/TaskForm.vue";
-const { tasks, completedTask, completedCount, totalCount } = useTaskStore();
+const taskStore  = useTaskStore();
+// { tasks, completedTask, completedCount, totalCount }
 
 const filter = ref('all');
 
@@ -28,14 +29,14 @@ const filter = ref('all');
     </nav>
 
     <div class="task-list" v-if="filter === 'all'">
-      <p>You have {{ totalCount }} tasks left to do.</p>
-      <div v-for="task in tasks" :key="task.id">
+      <p>You have total {{ taskStore.totalCount }} tasks.</p>
+      <div v-for="task in taskStore.tasks" :key="task.id">
           <task-details :task="task" />
       </div>
     </div>
     <div class="task-list" v-if="filter === 'completed'">
-      <p> You complete {{ completedCount }} tasks.</p>
-      <div v-for="task in completedTask" :key="task.id">
+      <p> You have completed {{ taskStore.completedCount }} tasks.</p>
+      <div v-for="task in taskStore.completedTask" :key="task.id">
         <task-details :task="task" />
       </div>
     </div>

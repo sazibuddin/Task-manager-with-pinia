@@ -58,6 +58,9 @@ header h1 {
     cursor: pointer;
     color: #bbb;
 }
+.task i.active {
+    color: green;
+}
 
 /* filter nav */
 .filter {
@@ -109,3 +112,4 @@ form input {
     color: #555;
     font-size: 1em;
 }
+

@@ -11,13 +11,10 @@ const newTask = ref('');
       taskStore.addTask({
         id: Math.floor(Math.random() * 10000),
         title: newTask.value,
-        isComplete: false,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quisquam.',
+        isComplete: false
       })
       newTask.value = '';
     }
-
-    // return { handleSubmit, newTask }
   }
 
 

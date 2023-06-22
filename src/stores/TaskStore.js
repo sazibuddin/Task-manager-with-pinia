@@ -5,15 +5,13 @@ export const useTaskStore = defineStore('taskStore',  {
         tasks: [
             {
                 id: 1,
-                title: "buy some milk",
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quisquam.',
-                isComplete: false
+                title: "Wake up at 5 am",
+                isComplete: true
             },
             {
                 id: 2,
-                title: "play Gloomhaven",
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quisquam.',
-                isComplete: true
+                title: "Go for a walk",
+                isComplete: false
             }
         ]
     }),
@@ -33,6 +31,13 @@ export const useTaskStore = defineStore('taskStore',  {
     actions: {
         addTask(task) {
             this.tasks.push(task);
+        },
+        removeTask(id) {
+            this.tasks =  this.tasks.filter(task => task.id !== id);
+        },
+        toggleComplete(id) {
+            const task = this.tasks.find(task => task.id === id);
+            task.isComplete = !task.isComplete;
         }
     }
 })
